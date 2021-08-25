@@ -3,6 +3,9 @@ DEVICE_PATH := device/tcl/5015A
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
+# Show build time on the splash screen
+TW_DEVICE_VERSION= by daviiid99
+
 # Architecture
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
@@ -32,10 +35,10 @@ BOARD_KERNEL_TAGS_OFFSET := 0x0e000000
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-BOARD_KERNEL_IMAGE_NAME := zImage-dtb
+BOARD_KERNEL_IMAGE_NAME := zImage
 TARGET_KERNEL_ARCH := arm
 TARGET_KERNEL_HEADER_ARCH := arm
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/zImage
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/zImage-dtb
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6580
